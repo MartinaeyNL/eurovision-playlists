@@ -1,0 +1,17 @@
+.Header {
+    padding: var(--escp-padding-container);
+    display: flex;
+    justify-content: space-between;
+}
+
+.Prefix {
+
+}
+
+.Center {
+
+}
+
+.Suffix {
+
+}

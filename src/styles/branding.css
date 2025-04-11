@@ -1,0 +1,20 @@
+@import "open-props/colors-hsl.min.css";
+
+#root {
+    /* Colors */
+    --escp-color-primary: var(--blue-8);
+
+    /* Grayscale */
+    --escp-color-black: var(--gray-10);
+    --escp-color-gray-900: var(--gray-9);
+    --escp-color-gray-800: var(--gray-8);
+    --escp-color-gray-700: var(--gray-7);
+    --escp-color-gray-600: var(--gray-6);
+    --escp-color-gray-500: var(--gray-5);
+    --escp-color-gray-400: var(--gray-4);
+    --escp-color-gray-200: var(--gray-2);
+    --escp-color-white: var(--gray-0);
+
+    /* Padding */
+    --escp-padding-container: 16px 32px;
+}
