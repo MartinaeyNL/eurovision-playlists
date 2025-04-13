@@ -44,7 +44,7 @@ const App: Component = () => {
         <div class={`${styles.App} ${getAppearanceStyles(appearance())}`}>
             <Header/>
             <div class={styles.Content}>
-                <Router>
+                <Router base="eurovision-playlists">
                     <Route path="/" component={Home}/>
                     <Route path="/playlist/:id" component={Playlist}/>
                     <Route path="/about" component={About}/>
