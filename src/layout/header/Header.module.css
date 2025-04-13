@@ -1,11 +1,23 @@
 .Header {
-    padding: var(--escp-padding-container);
+    padding: var(--escp-container-padding);
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.Header > * {
+    display: flex;
+    align-items: center;
+    gap: var(--escp-container-gap);
 }
 
 .Prefix {
 
+}
+
+.PrefixIcon {
+    font-size: var(--escp-font-size-xl);
+    color: var(--escp-color-primary);
 }
 
 .Center {
@@ -14,4 +26,23 @@
 
 .Suffix {
 
+}
+
+.SuffixContainer {
+    display: flex;
+    align-items: center;
+    gap: var(--escp-container-gap);
+}
+
+.MenuSheet::part(content) {
+    padding: 0;
+}
+
+.MenuIcon {
+    /*color: var(--escp-color-black);*/
+    margin-right: 6px;
+}
+
+.MenuBar {
+    min-width: 120px;
 }

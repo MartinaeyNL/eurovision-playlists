@@ -6,5 +6,5 @@ import {fetchDictionary, Locale} from "../util/translations";
 export const [appearance, setAppearance] = createSignal(AppearanceMode.LIGHT);
 
 // Language related
-export const [locale, setLocale] = createSignal<Locale>("en");
+export const [locale, setLocale] = createSignal<Locale>("gb");
 export const [langDictionary] = createResource(locale, fetchDictionary);

@@ -10,6 +10,32 @@ import Playlist from "./pages/playlist/Playlist";
 import About from "./pages/about/About";
 import Header from "./layout/header/Header";
 
+// Import Vaadin customElements
+import "@vaadin/button"
+import "@vaadin/menu-bar"
+import "@vaadin/select";
+import "@vaadin/tabsheet"
+import "@vaadin/tabs"
+import "@vaadin/text-field"
+
+/**
+ * Listing all customElements, so they're recognised by SolidJS
+ * https://github.com/solidjs/solid/issues/616#issuecomment-903399876
+ */
+declare module "solid-js" {
+    namespace JSX {
+        interface IntrinsicElements {
+            "vaadin-button": any,
+            "vaadin-menu-bar": any,
+            "vaadin-select": any,
+            "vaadin-tabsheet": any,
+            "vaadin-tabs": any,
+            "vaadin-tab": any,
+            "vaadin-text-field": any
+        }
+    }
+}
+
 const App: Component = () => {
 
     const t = i18n.translator(langDictionary);

@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "@iconify-icon/solid": "^2.3.0",
     "typescript": "^5.7.2",
     "vite": "^6.0.0",
     "vite-plugin-solid": "^2.11.6"
@@ -18,6 +19,12 @@
   "dependencies": {
     "@solid-primitives/i18n": "^2.2.0",
     "@solidjs/router": "^0.15.3",
+    "@vaadin/button": "^24.7.2",
+    "@vaadin/menu-bar": "^24.7.2",
+    "@vaadin/select": "^24.7.2",
+    "@vaadin/tabs": "^24.7.2",
+    "@vaadin/tabsheet": "^24.7.2",
+    "@vaadin/text-field": "^24.7.2",
     "open-props": "^1.7.15",
     "solid-js": "^1.9.5"
   }

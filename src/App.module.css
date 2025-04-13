@@ -5,6 +5,11 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
+  /* Vaadin styles */
+  --lumo-primary-color: var(--escp-color-primary);
+  --lumo-primary-color-50pct: var(--escp-color-primary-tint);
+  --lumo-primary-text-color: var(--escp-color-primary);
 }
 
 .Content {
@@ -12,11 +17,63 @@
 }
 
 .AppLight {
-  --escp-background: #E0E0E0;
-  color: var(--escp-color-black);
+  /* Primary colors for Light mode */
+  --escp-color-primary-900: var(--teal-10);
+  --escp-color-primary-800: var(--teal-9);
+  --escp-color-primary-700: var(--teal-8);
+  --escp-color-primary-600: var(--teal-7);
+  --escp-color-primary-500: var(--teal-6);
+  --escp-color-primary-400: var(--teal-4);
+  --escp-color-primary-200: var(--teal-2);
+  --escp-color-primary-100: var(--teal-1);
+  --escp-color-primary-0: var(--teal-0);
+
+  /* Secondary colors for Light mode */
+  --escp-color-secondary: var(--gray-10);
+  --escp-color-secondary-900: var(--gray-9);
+  --escp-color-secondary-800: var(--gray-8);
+  --escp-color-secondary-700: var(--gray-7);
+  --escp-color-secondary-600: var(--gray-6);
+  --escp-color-secondary-500: var(--gray-5);
+  --escp-color-secondary-400: var(--gray-4);
+  --escp-color-secondary-200: var(--gray-2);
+  --escp-color-secondary-100: var(--gray-0);
+
+  /* Primary colors */
+  --escp-color-primary: var(--escp-color-primary-700);
+  --escp-color-primary-tint: var(--escp-color-primary-400);
+  --escp-background: var(--escp-color-secondary-200);
+
+  color: var(--escp-color-secondary);
 }
 
 .AppDark {
-  --escp-background: black;
-  color: var(--escp-color-black)
+  /* Primary colors for Light mode */
+  --escp-color-primary-900: var(--teal-0);
+  --escp-color-primary-800: var(--teal-2);
+  --escp-color-primary-700: var(--teal-4);
+  --escp-color-primary-600: var(--teal-6);
+  --escp-color-primary-500: var(--teal-8);
+  --escp-color-primary-400: var(--teal-9);
+  --escp-color-primary-200: var(--teal-10);
+  --escp-color-primary-100: var(--teal-11);
+  --escp-color-primary-0: var(--teal-12);
+
+  /* Secondary colors for Light mode */
+  --escp-color-secondary: var(--gray-0);
+  --escp-color-secondary-900: var(--gray-2);
+  --escp-color-secondary-800: var(--gray-4);
+  --escp-color-secondary-700: var(--gray-5);
+  --escp-color-secondary-600: var(--gray-6);
+  --escp-color-secondary-500: var(--gray-7);
+  --escp-color-secondary-400: var(--gray-8);
+  --escp-color-secondary-200: var(--gray-9);
+  --escp-color-secondary-100: var(--gray-10);
+
+  /* Primary colors */
+  --escp-color-primary: var(--escp-color-primary-700);
+  --escp-color-primary-tint: var(--escp-color-primary-400);
+  --escp-background: var(--escp-color-secondary-200);
+
+  color: var(--escp-color-secondary-900)
 }

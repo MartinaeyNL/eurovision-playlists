@@ -1,9 +1,9 @@
 import * as i18n from "@solid-primitives/i18n";
 
-import type * as en from "../translations/en";
+import type * as gb from "../translations/gb";
 
-export type Locale = "en" | "nl";
-export type RawDictionary = typeof en.dict;
+export type Locale = "gb" | "nl";
+export type RawDictionary = typeof gb.dict;
 export type Dictionary = i18n.Flatten<RawDictionary>;
 
 export async function fetchDictionary(locale: Locale): Promise<Dictionary> {
