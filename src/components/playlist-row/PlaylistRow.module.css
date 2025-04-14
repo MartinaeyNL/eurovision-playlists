@@ -1,0 +1,14 @@
+
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: var(--escp-container-padding);
+    gap: var(--escp-container-gap);
+}
+
+.Content {
+    display: flex;
+    gap: var(--escp-container-gap);
+    align-items: center;
+}

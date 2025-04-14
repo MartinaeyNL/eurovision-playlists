@@ -1,0 +1,6 @@
+
+.Badge {
+    padding: var(--escp-container-padding-xs);
+    border-radius: var(--escp-container-radius-xs);
+    font-weight: 500;
+}

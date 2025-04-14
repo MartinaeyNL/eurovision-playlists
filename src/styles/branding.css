@@ -7,6 +7,24 @@
     --escp-color-white: var(--gray-2);
     --escp-color-black: var(--gray-10);
 
+    /* Special colors */
+    --escp-yellow-light: var(--yellow-2);
+    --escp-yellow-dark: var(--yellow-11);
+    --escp-orange-light: var(--orange-2);
+    --escp-orange-dark: var(--orange-11);
+    --escp-red-light: var(--red-1);
+    --escp-red-dark: var(--red-10);
+    --escp-green-light: var(--green-1);
+    --escp-green-dark: var(--green-10);
+    --escp-blue-light: var(--blue-1);
+    --escp-blue-dark: var(--blue-10);
+    --escp-purple-light: var(--purple-1);
+    --escp-purple-dark: var(--purple-10);
+    --escp-brown-light: var(--brown-1);
+    --escp-brown-dark: var(--brown-10);
+    --escp-gray-light: var(--gray-3);
+    --escp-gray-dark: var(--gray-11);
+
     /* Font sizes */
     --escp-font-size-xl: var(--font-size-8);
     --escp-font-size-lg: var(--font-size-5);
@@ -16,6 +34,8 @@
     --escp-container-gap-lg: var(--size-4);
     --escp-container-gap: var(--size-2);
     --escp-container-padding: 16px 32px;
+    --escp-container-padding-xs: 4px 8px;
+    --escp-container-radius-xs: 4px;
 
     /* Input fields */
     --escp-input-xl: var(--size-15);

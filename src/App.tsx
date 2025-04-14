@@ -11,12 +11,13 @@ import About from "./pages/about/About";
 import Header from "./layout/header/Header";
 
 // Import Vaadin customElements
-import "@vaadin/button"
-import "@vaadin/menu-bar"
+import "@vaadin/button";
+import "@vaadin/card";
+import "@vaadin/menu-bar";
 import "@vaadin/select";
-import "@vaadin/tabsheet"
-import "@vaadin/tabs"
-import "@vaadin/text-field"
+import "@vaadin/tabsheet";
+import "@vaadin/tabs";
+import "@vaadin/text-field";
 
 /**
  * Listing all customElements, so they're recognised by SolidJS
@@ -26,6 +27,7 @@ declare module "solid-js" {
     namespace JSX {
         interface IntrinsicElements {
             "vaadin-button": any,
+            "vaadin-card": any,
             "vaadin-menu-bar": any,
             "vaadin-select": any,
             "vaadin-tabsheet": any,
@@ -39,6 +41,10 @@ declare module "solid-js" {
 const App: Component = () => {
 
     const t = i18n.translator(langDictionary);
+
+    // Enable 'preview' components like vaadin-card;
+    // @ts-ignore
+    window.Vaadin.featureFlags.cardComponent = true;
 
     return (
         <div class={`${styles.App} ${getAppearanceStyles(appearance())}`}>
