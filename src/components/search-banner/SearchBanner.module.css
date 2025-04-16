@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     background: url("../../assets/abstract_background_light.svg"); /*var(--escp-color-secondary-400)*/
     background-size: cover;
     color: var(--escp-color-white)

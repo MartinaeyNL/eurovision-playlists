@@ -4,8 +4,10 @@ import PlaylistCard from "../playlist-card/PlaylistCard";
 import { Slider, createSlider } from "solid-slider"
 import {KeenSliderOptions} from "keen-slider";
 import "solid-slider/slider.css";
+import {WheelControlsPlugin} from "../../util/util";
 
 const sliderOptions = {
+    rubberband: false,
     breakpoints: {
         "(min-width: 320px)": {
             slides: { perView: 1.5, spacing: 16 }
@@ -32,7 +34,7 @@ const PlaylistRow: Component = () => {
     return (
         <div class={styles.Container}>
             <h2>Row details</h2>
-            <Slider options={sliderOptions}>
+            <Slider options={sliderOptions} plugins={[WheelControlsPlugin]}>
                 <PlaylistCard />
                 <PlaylistCard />
                 <PlaylistCard />
