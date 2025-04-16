@@ -13,9 +13,9 @@ const getBadgeColors = (color: string) => css({
     color: `var(--escp-${color}-dark)`
 })
 
-const Badge: Component<BadgeProps> = (props: any) => {
+const Badge: Component<BadgeProps> = (props: BadgeProps) => {
     return (
-        <span slot={props.slot} class={`${styles.Badge} ${getBadgeColors(props.color)}`}>{props.label}</span>
+        <span slot={props.slot} class={`${styles.Badge} ${getBadgeColors(props.color || 'blue')}`}>{props.label}</span>
     )
 }
 

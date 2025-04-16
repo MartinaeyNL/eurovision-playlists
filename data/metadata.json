@@ -1,0 +1,20 @@
+{
+  "playlists": [
+    {
+      "id": "cc9e59ac-f954-4b43-bf43-894d61329f8b",
+      "tags": [
+        "2025",
+        "Official"
+      ],
+      "title": "Eurovision 2025",
+      "author": "MartinaeyNL",
+      "desc": "The official playlists by Spotify and Youtube.",
+      "img": "src/assets/switzerland-esc2025.jpg",
+      "credit": "EBU",
+      "uri": {
+        "yt": "RDCLAK5uy_kL-nWMqnRoPuUCh9toq5gatFti1kFokH0",
+        "sp": "37i9dQZF1DWVCKO3xAlT1Q"
+      }
+    }
+  ]
+}

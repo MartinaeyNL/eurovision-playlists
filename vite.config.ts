@@ -4,11 +4,7 @@ import solidPlugin from 'vite-plugin-solid';
 export default defineConfig({
     base: '/eurovision-playlists/',
     plugins: [
-        solidPlugin(),
-        /*paraglideVitePlugin({
-            project: "./project.inlang",
-            outdir: "./src/paraglide",
-        }),*/
+        solidPlugin()
     ],
     server: {
         port: 3000,
@@ -16,4 +12,10 @@ export default defineConfig({
     build: {
         target: 'esnext',
     },
+    resolve: {
+        alias: {
+            data: "/data",
+            assets: "/src/assets",
+        }
+    }
 });

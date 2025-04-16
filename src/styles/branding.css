@@ -33,6 +33,7 @@
     /* Padding */
     --escp-container-gap-lg: var(--size-4);
     --escp-container-gap: var(--size-2);
+    --escp-container-gap-sm: var(--size-1);
     --escp-container-padding: 16px 32px;
     --escp-container-padding-xs: 4px 8px;
     --escp-container-radius-xs: 4px;

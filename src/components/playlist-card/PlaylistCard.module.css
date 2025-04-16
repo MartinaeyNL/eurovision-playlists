@@ -1,0 +1,14 @@
+.BadgeRow {
+    display: flex;
+    justify-content: end;
+    gap: var(--escp-container-gap-sm)
+}
+.IconRow {
+    display: flex;
+    justify-content: end;
+}
+
+.IconRow > * {
+    font-size: var(--escp-font-size-lg);
+    color: unset;
+}

@@ -1,10 +1,11 @@
-import type {Component} from "solid-js";
+import {Component, For} from "solid-js";
 import styles from "./PlaylistRow.module.css";
 import PlaylistCard from "../playlist-card/PlaylistCard";
 import { Slider, createSlider } from "solid-slider"
 import {KeenSliderOptions} from "keen-slider";
 import "solid-slider/slider.css";
 import {WheelControlsPlugin} from "../../util/util";
+import {PlaylistMetadata} from "../../util/model";
 
 const sliderOptions = {
     rubberband: false,
@@ -30,20 +31,20 @@ const sliderOptions = {
     }
 } as KeenSliderOptions
 
-const PlaylistRow: Component = () => {
+interface PlaylistRowProps {
+    playlists?: PlaylistMetadata[];
+}
+
+const PlaylistRow: Component<PlaylistRowProps> = (props: PlaylistRowProps) => {
     return (
         <div class={styles.Container}>
             <h2>Row details</h2>
             <Slider options={sliderOptions} plugins={[WheelControlsPlugin]}>
-                <PlaylistCard />
-                <PlaylistCard />
-                <PlaylistCard />
-                <PlaylistCard />
-                <PlaylistCard />
-                <PlaylistCard />
-                <PlaylistCard />
-                <PlaylistCard />
-                <PlaylistCard />
+                <For each={props.playlists || []}>
+                    {(item, index) => (
+                        <PlaylistCard playlist={item} />
+                    )}
+                </For>
             </Slider>
         </div>
     )
