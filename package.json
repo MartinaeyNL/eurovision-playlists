@@ -23,6 +23,7 @@
     "@solid-primitives/i18n": "^2.2.0",
     "@solid-primitives/scheduled": "^1.5.0",
     "@solidjs/router": "^0.15.3",
+    "@spotify/web-api-ts-sdk": "^1.2.0",
     "@vaadin/button": "^24.7.2",
     "@vaadin/card": "^24.7.2",
     "@vaadin/menu-bar": "^24.7.2",
