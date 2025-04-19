@@ -7,6 +7,7 @@ import styles from "./PlaylistCard.module.css";
 
 interface PlaylistCardProps {
     playlist: PlaylistMetadata;
+    badges?: Record<string, string>
 }
 
 const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) => {
@@ -19,7 +20,7 @@ const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) =>
                 <span slot="subtitle">{props.playlist.author}</span>
                 <div class={styles.BadgeRow} slot="header-suffix">
                     <For each={props.playlist.tags}>
-                        {(item, index) => (<Badge label={item} color="purple" />)}
+                        {(item, index) => (<Badge label={item} color={props.badges?.[item.toLowerCase()] || 'green'} />)}
                     </For>
                 </div>
                 <span>{props.playlist.desc}</span>

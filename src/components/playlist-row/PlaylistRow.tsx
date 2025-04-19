@@ -33,6 +33,7 @@ const sliderOptions = {
 
 interface PlaylistRowProps {
     playlists?: PlaylistMetadata[];
+    tags?: Record<string, string>;
 }
 
 const PlaylistRow: Component<PlaylistRowProps> = (props: PlaylistRowProps) => {
@@ -42,7 +43,7 @@ const PlaylistRow: Component<PlaylistRowProps> = (props: PlaylistRowProps) => {
             <Slider options={sliderOptions} plugins={[WheelControlsPlugin]}>
                 <For each={props.playlists || []}>
                     {(item, index) => (
-                        <PlaylistCard playlist={item} />
+                        <PlaylistCard playlist={item} badges={props.tags} />
                     )}
                 </For>
             </Slider>

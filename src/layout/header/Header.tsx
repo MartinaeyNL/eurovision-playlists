@@ -1,19 +1,9 @@
 import type {Component} from "solid-js";
-import {appearance, langDictionary, locale, setAppearance, setLocale} from "../../stores/preferences";
+import {appearance, langDictionary, locale, navigate, setAppearance, setLocale} from "../../stores/preferences";
 import {AppearanceMode} from "../../models/ui-models";
 import { Icon } from '@iconify-icon/solid';
-
-import styles from './Header.module.css';
 import * as i18n from "@solid-primitives/i18n";
-
-function createMenuItem(icon: string, text: string) {
-    return (
-        <div>
-            <Icon class={styles.MenuIcon} inline icon={icon} />
-            <span>{text}</span>
-        </div>
-    )
-}
+import styles from './Header.module.css';
 
 const getSelectItems = () => [
     { label: "Nederlands", value: "nl" },
@@ -22,6 +12,14 @@ const getSelectItems = () => [
 
 const Header: Component = () => {
     const t = i18n.translator(langDictionary);
+    let selectedIndex = 0;
+    const onMenuSelect = (ev: CustomEvent) => {
+        if(selectedIndex !== ev.detail.value) {
+            navigate()(_getPage(ev.detail.value))
+            selectedIndex = ev.detail.value;
+        }
+    }
+    const onLocaleSelect = (ev: CustomEvent) => setLocale(ev.detail.value);
     return (
         <header class={styles.Header}>
             <div class={styles.Prefix}>
@@ -33,12 +31,13 @@ const Header: Component = () => {
             </div>
             <div class={styles.Suffix}>
                 <vaadin-tabsheet class={styles.MenuSheet}>
-                    <vaadin-tabs slot="tabs" selected={0}>
+                    <vaadin-tabs slot="tabs" selected={selectedIndex} on:selected-changed={(ev: CustomEvent) => onMenuSelect(ev)}>
                         <vaadin-tab>{t("mainMenu.home")}</vaadin-tab>
+                        <vaadin-tab>{t("mainMenu.randomArtist")}</vaadin-tab>
                         <vaadin-tab>{t("mainMenu.about")}</vaadin-tab>
                     </vaadin-tabs>
                     <div slot="suffix" class={styles.SuffixContainer}>
-                        <vaadin-select items={getSelectItems()} value={locale()} no-vertical-overlap on:value-changed={_onLocaleSelect}>
+                        <vaadin-select items={getSelectItems()} value={locale()} no-vertical-overlap on:value-changed={onLocaleSelect}>
                             <Icon slot="prefix" class={styles.MenuIcon} inline icon={`flag:${locale()}-4x3`} />
                         </vaadin-select>
                         <vaadin-button theme="secondary" onClick={_onAppearanceChange}>
@@ -52,22 +51,11 @@ const Header: Component = () => {
     )
 }
 
-function _onLocaleSelect(ev: CustomEvent) {
-    console.debug(ev);
-    setLocale(ev.detail.value);
-}
-
-function _onItemSelected(ev: CustomEvent) {
-
-    // When changing language...
-    if(ev.detail.value.lang) {
-        setLocale(ev.detail.value.lang);
-    }
-
-    else if(ev.detail.value.id === "appearance") {
-        const oldValue = ev.detail.value.appearance;
-        const newValue = oldValue === AppearanceMode.LIGHT ? AppearanceMode.DARK : AppearanceMode.LIGHT;
-        setAppearance(newValue);
+function _getPage(index: number): string {
+    switch (index) {
+        case 1: return "/random-artist";
+        case 2: return "/about";
+        default: return "/";
     }
 }
 

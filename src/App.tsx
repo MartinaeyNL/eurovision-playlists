@@ -1,6 +1,6 @@
 import type {Component} from 'solid-js';
-import {Router, Route} from "@solidjs/router";
-import {appearance, langDictionary} from "./stores/preferences";
+import {Router, Route, useNavigate} from "@solidjs/router";
+import {appearance, langDictionary, setNavigator} from "./stores/preferences";
 import {getAppearanceStyles} from "./util/util";
 import * as i18n from "@solid-primitives/i18n";
 
@@ -9,6 +9,7 @@ import Home from "./pages/home/Home";
 import Playlist from "./pages/playlist/Playlist";
 import About from "./pages/about/About";
 import Header from "./layout/header/Header";
+import RandomArtist from "./pages/random-artist/RandomArtist";
 
 // Import Vaadin customElements
 import "@vaadin/button";
@@ -38,6 +39,16 @@ declare module "solid-js" {
     }
 }
 
+const Layout: Component = (props: any) => {
+    setNavigator(useNavigate);
+    return (
+        <>
+            <Header />
+            {props.children}
+        </>
+    )
+}
+
 const App: Component = () => {
 
     const t = i18n.translator(langDictionary);
@@ -48,11 +59,11 @@ const App: Component = () => {
 
     return (
         <div class={`${styles.App} ${getAppearanceStyles(appearance())}`}>
-            <Header/>
             <div class={styles.Content}>
-                <Router base="eurovision-playlists">
-                    <Route path="/" component={Home}/>
+                <Router base="eurovision-playlists" root={Layout}>
+                    <Route path="/" component={Home} />
                     <Route path="/playlist/:id" component={Playlist}/>
+                    <Route path="/random-artist" component={RandomArtist} />
                     <Route path="/about" component={About}/>
                 </Router>
             </div>
