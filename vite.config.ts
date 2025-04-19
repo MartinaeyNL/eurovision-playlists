@@ -2,7 +2,7 @@ import {defineConfig} from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 
 export default defineConfig({
-    base: '/eurovision-playlists',
+    /*base: '/eurovision-playlists',*/
     plugins: [
         solidPlugin()
     ],

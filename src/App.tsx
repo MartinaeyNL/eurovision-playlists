@@ -60,11 +60,12 @@ const App: Component = () => {
     return (
         <div class={`${styles.App} ${getAppearanceStyles(appearance())}`}>
             <div class={styles.Content}>
-                <Router base="eurovision-playlists" root={Layout}>
+                <Router root={Layout}>
                     <Route path="/" component={Home} />
                     <Route path="/playlist/:id" component={Playlist}/>
                     <Route path="/random-artist" component={RandomArtist} />
                     <Route path="/about" component={About}/>
+                    <Route path="*404" component={Home} />
                 </Router>
             </div>
             <span>{t("goodbye", {name: 'Martin'})}</span>
