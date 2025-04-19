@@ -1,0 +1,9 @@
+{
+  "name": "eurovision-playlists-worker",
+  "main": "./src/worker.js",
+  "compatibility_date": "2025-04-19",
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 100
+  }
+}
