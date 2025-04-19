@@ -9,11 +9,21 @@
       "title": "Eurovision 2025",
       "author": "MartinaeyNL",
       "desc": "The official playlists by Spotify and Youtube.",
-      "img": "src/assets/switzerland-esc2025.jpg",
-      "credit": "EBU",
       "uri": {
         "yt": "RDCLAK5uy_kL-nWMqnRoPuUCh9toq5gatFti1kFokH0",
         "sp": "37i9dQZF1DWVCKO3xAlT1Q"
+      }
+    }, {
+      "id": "",
+      "tags": [
+        "2025",
+        "NF"
+      ],
+      "title": "EUROVISION 2025 | NATIONAL FINALS",
+      "author": "myeurovisionscoreboard",
+      "desc": "All songs of 2025 national finals",
+      "uri": {
+        "sp": "4pMktspziiyaJlfFF68Bje"
       }
     }
   ]

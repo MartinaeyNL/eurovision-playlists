@@ -1,8 +1,10 @@
-import type {Component} from 'solid-js';
+import {Component, createEffect} from 'solid-js';
 import {Router, Route, useNavigate} from "@solidjs/router";
 import {appearance, langDictionary, setNavigator} from "./stores/preferences";
 import {getAppearanceStyles} from "./util/util";
 import * as i18n from "@solid-primitives/i18n";
+import {setSpotifyApi, spotifyAccessToken} from "./stores/api";
+import SpotifyWebApi from "spotify-web-api-js";
 
 import styles from './App.module.css';
 import Home from "./pages/home/Home";
@@ -19,6 +21,7 @@ import "@vaadin/select";
 import "@vaadin/tabsheet";
 import "@vaadin/tabs";
 import "@vaadin/text-field";
+import {SpotifyApi} from "./util/model";
 
 /**
  * Listing all customElements, so they're recognised by SolidJS
@@ -56,6 +59,18 @@ const App: Component = () => {
     // Enable 'preview' components like vaadin-card;
     // @ts-ignore
     window.Vaadin.featureFlags.cardComponent = true;
+
+    createEffect(() => {
+
+        // Initialize Spotify API
+        const accessToken = spotifyAccessToken();
+        if(accessToken) {
+            const spotifyApi = new SpotifyWebApi() as SpotifyApi;
+            spotifyApi.setAccessToken(accessToken.access_token);
+            setSpotifyApi(spotifyApi);
+            console.debug("Initialized Spotify API!");
+        }
+    })
 
     return (
         <div class={`${styles.App} ${getAppearanceStyles(appearance())}`}>

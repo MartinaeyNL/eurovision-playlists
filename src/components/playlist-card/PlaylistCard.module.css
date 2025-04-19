@@ -12,3 +12,11 @@
     font-size: var(--escp-font-size-lg);
     color: unset;
 }
+
+vaadin-card {
+    width: 100%;
+}
+
+vaadin-card > img {
+    aspect-ratio: 1/1;
+}

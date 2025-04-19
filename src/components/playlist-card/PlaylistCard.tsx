@@ -1,9 +1,17 @@
-import {Component, For, Show} from "solid-js";
+import {Component, createEffect, createResource, createSignal, For, Show} from "solid-js";
 import {badge} from "@vaadin/vaadin-lumo-styles/badge.js";
 import Badge from "../badge/Badge";
-import {PlaylistMetadata} from "../../util/model";
+import {PlaylistMetadata, SpotifyApi} from "../../util/model";
 import {Icon} from "@iconify-icon/solid";
 import styles from "./PlaylistCard.module.css";
+import {spotifyApi} from "../../stores/api";
+
+const fetchPlaylistImg = async (id?: string) => {
+    console.debug("Attempting fetching playlist...");
+    if(id) {
+        return await spotifyApi()?.getPlaylistCoverImage(id);
+    }
+}
 
 interface PlaylistCardProps {
     playlist: PlaylistMetadata;
@@ -11,11 +19,18 @@ interface PlaylistCardProps {
 }
 
 const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) => {
+
+    // Fetch playlist image from Spotify
+    const [playlistImg, { refetch }] = createResource(props.playlist.uri.sp, fetchPlaylistImg);
+    createEffect(() => {
+        if(spotifyApi()) refetch()
+    })
+
     return (
         <div>
             <style>${badge.cssText}</style>
             <vaadin-card theme="cover-media">
-                <img slot="media" src={props.playlist.img || 'src/assets/abstract_background_light.svg'} alt=""/>
+                <img slot="media" src={props.playlist.img || playlistImg()?.[0].url || 'src/assets/abstract_background_light.svg'} alt=""/>
                 <span slot="title">{props.playlist.title}</span>
                 <span slot="subtitle">{props.playlist.author}</span>
                 <div class={styles.BadgeRow} slot="header-suffix">
