@@ -33,6 +33,8 @@ jobs:
         run: npm install
 
       - name: Build website using Vite
+        env:
+          VITE_ESCP_API_WORKER_URL: ${{ secrets.ESCP_API_WORKER_URL }}
         run: npm run build
 
       - name: Deploy website
