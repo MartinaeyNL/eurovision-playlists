@@ -1,5 +1,5 @@
 import {Component, For, Show} from "solid-js";
-import styles from "./PlaylistRow.module.css";
+import rowStyles from "./PlaylistRow.module.css";
 import PlaylistCard from "../playlist-card/PlaylistCard";
 import { createSlider } from "solid-slider"
 import {KeenSliderOptions} from "keen-slider";
@@ -39,7 +39,7 @@ interface PlaylistRowProps {
 const PlaylistRow: Component<PlaylistRowProps> = (props: PlaylistRowProps) => {
     const [slider] = createSlider(sliderOptions, WheelControlsPlugin);
     return (
-        <div class={styles.Container}>
+        <div class={rowStyles.Container}>
             <h2>Row details</h2>
             <Show when={props.playlists?.length}>
                 <div use:slider>

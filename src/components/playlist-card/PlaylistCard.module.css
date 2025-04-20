@@ -27,6 +27,7 @@ vaadin-card {
 
 vaadin-card > img {
     aspect-ratio: 1/1;
+    user-select: none;
 }
 
 vaadin-card > span[slot="title"] {

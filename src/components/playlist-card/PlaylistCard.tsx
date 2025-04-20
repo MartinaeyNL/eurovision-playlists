@@ -5,6 +5,8 @@ import {PlaylistMetadata} from "../../util/model";
 import {Icon} from "@iconify-icon/solid";
 import styles from "./PlaylistCard.module.css";
 import {spotifyApi} from "../../stores/api";
+import * as i18n from "@solid-primitives/i18n";
+import {langDictionary} from "../../stores/preferences";
 
 interface PlaylistCardProps {
     playlist: PlaylistMetadata;
@@ -18,6 +20,8 @@ const fetchPlaylistImg = async (id?: string) => {
 
 const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) => {
     console.log(`Loading playlist card for ${props.playlist.title}..`);
+
+    const t = i18n.translator(langDictionary);
     const [playlistImg] = createResource(
         () => spotifyApi() ? props.playlist.uri.sp : null,
         fetchPlaylistImg
@@ -34,7 +38,7 @@ const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) =>
                 <div class={styles.FooterRow}>
                     <div class={styles.BadgeRow}>
                         <For each={props.playlist.tags}>
-                            {(item, index) => (<Badge label={item} color={props.badges?.[item.toLowerCase()] || 'green'}/>)}
+                            {(item, index) => (<Badge label={t(`tags.${item}` as any) || item} color={props.badges?.[item.toLowerCase()] || 'green'}/>)}
                         </For>
                     </div>
                     <div class={styles.IconRow}>

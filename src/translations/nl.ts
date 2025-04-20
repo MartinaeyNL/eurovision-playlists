@@ -9,5 +9,9 @@ export const dict = {
     },
     searchBanner: {
         title: "Welke playlist zoek je?"
+    },
+    tags: {
+        official: "Officieel",
+        nf: "NF"
     }
 };

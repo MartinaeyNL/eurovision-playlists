@@ -7,8 +7,6 @@
     gap: var(--escp-container-gap);
 }
 
-.Content {
-    display: flex;
-    gap: var(--escp-container-gap);
-    align-items: center;
+vaadin-card {
+    user-select: text;
 }
