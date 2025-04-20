@@ -1,30 +1,27 @@
-import {Component, createEffect, createResource, createSignal, For, Show} from "solid-js";
+import {Component, createResource, For, Show} from "solid-js";
 import {badge} from "@vaadin/vaadin-lumo-styles/badge.js";
 import Badge from "../badge/Badge";
-import {PlaylistMetadata, SpotifyApi} from "../../util/model";
+import {PlaylistMetadata} from "../../util/model";
 import {Icon} from "@iconify-icon/solid";
 import styles from "./PlaylistCard.module.css";
 import {spotifyApi} from "../../stores/api";
-
-const fetchPlaylistImg = async (id?: string) => {
-    console.debug("Attempting fetching playlist...");
-    if(id) {
-        return await spotifyApi()?.getPlaylistCoverImage(id);
-    }
-}
 
 interface PlaylistCardProps {
     playlist: PlaylistMetadata;
     badges?: Record<string, string>
 }
 
-const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) => {
+const fetchPlaylistImg = async (id?: string) => {
+    if(!id) return;
+    return spotifyApi()?.getPlaylistCoverImage(id);
+}
 
-    // Fetch playlist image from Spotify
-    const [playlistImg, { refetch }] = createResource(props.playlist.uri.sp, fetchPlaylistImg);
-    createEffect(() => {
-        if(spotifyApi()) refetch()
-    })
+const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) => {
+    console.log(`Loading playlist card for ${props.playlist.title}..`);
+    const [playlistImg] = createResource(
+        () => spotifyApi() ? props.playlist.uri.sp : null,
+        fetchPlaylistImg
+    );
 
     return (
         <div>

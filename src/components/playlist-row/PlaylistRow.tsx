@@ -1,7 +1,7 @@
-import {Component, For} from "solid-js";
+import {Component, For, Show} from "solid-js";
 import styles from "./PlaylistRow.module.css";
 import PlaylistCard from "../playlist-card/PlaylistCard";
-import { Slider, createSlider } from "solid-slider"
+import { createSlider } from "solid-slider"
 import {KeenSliderOptions} from "keen-slider";
 import "solid-slider/slider.css";
 import {WheelControlsPlugin} from "../../util/util";
@@ -37,16 +37,17 @@ interface PlaylistRowProps {
 }
 
 const PlaylistRow: Component<PlaylistRowProps> = (props: PlaylistRowProps) => {
+    const [slider] = createSlider(sliderOptions, WheelControlsPlugin);
     return (
         <div class={styles.Container}>
             <h2>Row details</h2>
-            <Slider options={sliderOptions} plugins={[WheelControlsPlugin]}>
-                <For each={props.playlists || []}>
-                    {(item, index) => (
-                        <PlaylistCard playlist={item} badges={props.tags} />
-                    )}
-                </For>
-            </Slider>
+            <Show when={props.playlists?.length}>
+                <div use:slider>
+                    <For each={props.playlists} fallback={<div>Loading...</div>}>
+                        {(item) => (<PlaylistCard playlist={item} badges={props.tags} />)}
+                    </For>
+                </div>
+            </Show>
         </div>
     )
 }
