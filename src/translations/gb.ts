@@ -7,4 +7,7 @@ export const dict = {
         randomArtist: "Random artist",
         about: "About us",
     },
+    searchBanner: {
+        title: "Looking for a playlist?"
+    }
 };

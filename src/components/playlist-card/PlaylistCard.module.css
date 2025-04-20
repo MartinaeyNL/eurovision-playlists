@@ -3,20 +3,34 @@
     justify-content: end;
     gap: var(--escp-container-gap-sm)
 }
+.FooterRow {
+    /*margin-top: var(--escp-container-gap-lg);*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .IconRow {
     display: flex;
-    justify-content: end;
 }
 
 .IconRow > * {
     font-size: var(--escp-font-size-lg);
     color: unset;
+    height: var(--escp-font-size-lg);
 }
 
 vaadin-card {
     width: 100%;
+    height: 100%;
 }
 
 vaadin-card > img {
     aspect-ratio: 1/1;
+}
+
+vaadin-card > span[slot="title"] {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }

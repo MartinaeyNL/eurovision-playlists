@@ -7,4 +7,7 @@ export const dict = {
         randomArtist: "Willekeurige artiest",
         about: "Over ons",
     },
+    searchBanner: {
+        title: "Welke playlist zoek je?"
+    }
 };
