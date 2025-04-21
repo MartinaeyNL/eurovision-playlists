@@ -1,6 +1,5 @@
 .Container {
-    min-height: 120px;
-    height: 10vw;
+    aspect-ratio: 12/1;
     padding: var(--escp-container-padding);
     display: flex;
     justify-content: center;
@@ -16,6 +15,7 @@
     flex-direction: column;
     gap: var(--escp-container-gap-lg);
     width: var(--escp-input-xl);
+    padding: var(--escp-container-padding);
 }
 
 .Content > * {

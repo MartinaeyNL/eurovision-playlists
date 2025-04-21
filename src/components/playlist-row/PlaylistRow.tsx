@@ -11,27 +11,28 @@ const sliderOptions = {
     rubberband: false,
     breakpoints: {
         "(min-width: 320px)": {
-            slides: { perView: 1.5, spacing: 16 }
-        },
-        "(min-width: 768px)": {
             slides: { perView: 2.5, spacing: 16 }
         },
-        "(min-width: 992px)": {
+        "(min-width: 768px)": {
             slides: { perView: 3.5, spacing: 16 }
         },
-        "(min-width: 1200px)": {
-            slides: { perView: 4.5, spacing: 32 }
+        "(min-width: 992px)": {
+            slides: { perView: 4.5, spacing: 16 }
         },
-        "(min-width: 1600px)": {
+        "(min-width: 1200px)": {
             slides: { perView: 5.5, spacing: 32 }
         },
-        "(min-width: 2000px)": {
+        "(min-width: 1600px)": {
             slides: { perView: 6.5, spacing: 32 }
+        },
+        "(min-width: 2000px)": {
+            slides: { perView: 7.5, spacing: 32 }
         }
     }
 } as KeenSliderOptions
 
 interface PlaylistRowProps {
+    title: string;
     playlists?: PlaylistMetadata[];
     tags?: Record<string, string>;
 }
@@ -40,7 +41,7 @@ const PlaylistRow: Component<PlaylistRowProps> = (props: PlaylistRowProps) => {
     const [slider] = createSlider(sliderOptions, WheelControlsPlugin);
     return (
         <div class={rowStyles.Container}>
-            <h2>Row details</h2>
+            <h2>{props.title}</h2>
             <Show when={props.playlists?.length}>
                 <div use:slider>
                     <For each={props.playlists} fallback={<div>Loading...</div>}>

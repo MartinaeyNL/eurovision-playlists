@@ -26,15 +26,29 @@ const Header: Component = () => {
                 <Icon class={styles.PrefixIcon} inline icon="material-symbols:bar-chart-rounded" />
                 <h1>Eurovision-playlists.com</h1>
             </div>
-            <div class={styles.Center}>
-
-            </div>
             <div class={styles.Suffix}>
                 <vaadin-tabsheet class={styles.MenuSheet}>
                     <vaadin-tabs slot="tabs" selected={selectedIndex} on:selected-changed={(ev: CustomEvent) => onMenuSelect(ev)}>
-                        <vaadin-tab>{t("mainMenu.home")}</vaadin-tab>
-                        <vaadin-tab>{t("mainMenu.randomArtist")}</vaadin-tab>
-                        <vaadin-tab>{t("mainMenu.about")}</vaadin-tab>
+                        <vaadin-tab>
+                            <Icon inline icon="material-symbols:home" />
+                            {t("mainMenu.home")}
+                        </vaadin-tab>
+                        <vaadin-tab>
+                            <Icon inline icon="material-symbols:shuffle" />
+                            {t("mainMenu.randomPlaylist")}
+                        </vaadin-tab>
+                        <vaadin-tab>
+                            <Icon inline icon="material-symbols:artist" />
+                            {t("mainMenu.randomArtist")}
+                        </vaadin-tab>
+                        <vaadin-tab>
+                            <Icon inline icon="material-symbols:library-add" />
+                            {t("mainMenu.contribute")}
+                        </vaadin-tab>
+                        <vaadin-tab>
+                            <Icon inline icon="material-symbols:info-outline" />
+                            {t("mainMenu.about")}
+                        </vaadin-tab>
                     </vaadin-tabs>
                     <div slot="suffix" class={styles.SuffixContainer}>
                         <vaadin-select items={getSelectItems()} value={locale()} no-vertical-overlap on:value-changed={onLocaleSelect}>

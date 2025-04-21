@@ -6,7 +6,9 @@ import {Icon} from "@iconify-icon/solid";
 import styles from "./PlaylistCard.module.css";
 import {spotifyApi} from "../../stores/api";
 import * as i18n from "@solid-primitives/i18n";
-import {langDictionary} from "../../stores/preferences";
+import {langDictionary, locale} from "../../stores/preferences";
+import {A} from "@solidjs/router";
+import {nfFlags} from "../../stores/data";
 
 interface PlaylistCardProps {
     playlist: PlaylistMetadata;
@@ -18,6 +20,11 @@ const fetchPlaylistImg = async (id?: string) => {
     return spotifyApi()?.getPlaylistCoverImage(id);
 }
 
+const fetchPlaylistFlagIcon = async (tag?: string) => {
+    if(!tag) return "";
+    return `flag:${nfFlags()?.[tag]}-4x3`;
+}
+
 const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) => {
     console.log(`Loading playlist card for ${props.playlist.title}..`);
 
@@ -27,34 +34,45 @@ const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) =>
         fetchPlaylistImg
     );
 
+    const [flagIcon] = createResource(
+        () => nfFlags() ? props.playlist.tags.find(t => nfFlags()?.[t]) : null,
+        fetchPlaylistFlagIcon
+    )
+
     return (
         <div>
             <style>${badge.cssText}</style>
-            <vaadin-card theme="cover-media">
-                <img slot="media" src={props.playlist.img || playlistImg()?.[0].url || 'src/assets/abstract_background_light.svg'} alt=""/>
-                <span slot="title">{props.playlist.title}</span>
-                <span slot="subtitle">{props.playlist.author}</span>
-                {/*<span>{props.playlist.desc}</span>*/}
-                <div class={styles.FooterRow}>
-                    <div class={styles.BadgeRow}>
-                        <For each={props.playlist.tags}>
-                            {(item, index) => (<Badge label={t(`tags.${item}` as any) || item} color={props.badges?.[item.toLowerCase()] || 'green'}/>)}
-                        </For>
-                    </div>
-                    <div class={styles.IconRow}>
-                        <Show when={props.playlist.uri.sp}>
-                            <a href={`https://open.spotify.com/playlist/${props.playlist.uri.sp}`}>
-                                <Icon icon="mdi:spotify"/>
-                            </a>
-                        </Show>
-                        <Show when={props.playlist.uri.yt}>
-                            <a href={`https://music.youtube.com/playlist?list=${props.playlist.uri.yt}`}>
-                                <Icon icon="material-symbols:play-circle-outline"/>
-                            </a>
+            <A href={`/playlist/${props.playlist.id}`}>
+                <vaadin-card theme="cover-media">
+                    <img slot="media" src={props.playlist.img || playlistImg()?.[0].url || 'src/assets/abstract_background_light.svg'} alt=""/>
+                    <div slot="title">
+                        <span>{props.playlist.title}</span>
+                        <Show when={flagIcon()}>
+                            <Icon class={styles.MenuIcon} inline icon={flagIcon() as string} />
                         </Show>
                     </div>
-                </div>
-            </vaadin-card>
+                    <span slot="subtitle">{props.playlist.author}</span>
+                    <div class={styles.FooterRow}>
+                        <div class={styles.BadgeRow}>
+                            <For each={props.playlist.tags.filter((_, index) => index < 2)}>
+                                {(item, index) => (<Badge label={t(`tags.${item}` as any) || item} color={props.badges?.[item.toLowerCase()] || 'green'}/>)}
+                            </For>
+                        </div>
+                        <div class={styles.IconRow}>
+                            <Show when={props.playlist.uri.sp}>
+                                <A href={`https://open.spotify.com/playlist/${props.playlist.uri.sp}`}>
+                                    <Icon icon="mdi:spotify"/>
+                                </A>
+                            </Show>
+                            <Show when={props.playlist.uri.yt}>
+                                <A href={`https://music.youtube.com/playlist?list=${props.playlist.uri.yt}`}>
+                                    <Icon icon="material-symbols:play-circle-outline"/>
+                                </A>
+                            </Show>
+                        </div>
+                    </div>
+                </vaadin-card>
+            </A>
         </div>
     )
 }

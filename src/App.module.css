@@ -11,8 +11,13 @@
   --lumo-primary-text-color: var(--escp-color-primary);
 }
 
-.Content {
-  flex: 1;
+.App > *:not(header) {
+  overflow: auto;
+}
+
+header {
+  box-shadow: 2px 2px 4px var(--escp-color-secondary-700);
+  z-index: 10;
 }
 
 .AppLight {

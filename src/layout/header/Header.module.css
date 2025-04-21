@@ -20,12 +20,9 @@
     color: var(--escp-color-primary);
 }
 
-.Center {
-
-}
-
 .Suffix {
-
+    flex: 1;
+    justify-content: end;
 }
 
 .SuffixContainer {
@@ -36,6 +33,11 @@
 
 .MenuSheet::part(content) {
     padding: 0;
+}
+
+vaadin-tab {
+    gap: var(--escp-container-gap);
+    padding: 0.5rem 1rem;
 }
 
 .MenuIcon {

@@ -15,9 +15,12 @@ export function getAppearanceStyles(appearance: AppearanceMode) {
 }
 
 export const WheelControlsPlugin = (slider: any) => {
-    const onWheel = throttle((ev: WheelEvent) => {
+    const onWheel = (ev: WheelEvent) => {
+        // Cancel window scroll when slider is scrollable (when there are more slides than visible)
+        const scrollable = slider.slides.length > slider.options.slides.perView;
+        if(scrollable) ev.preventDefault();
         ev.deltaY > 0 ? slider.prev() : slider.next();
-    }, 50)
+    }
     slider.on("created", () => {
         slider.container.addEventListener("wheel", onWheel, {
             passive: false,

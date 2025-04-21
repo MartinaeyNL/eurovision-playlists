@@ -7,8 +7,7 @@
         "official"
       ],
       "title": "Eurovision 2025",
-      "author": "MartinaeyNL",
-      "desc": "The official playlists by Spotify and Youtube.",
+      "author": "Official playlist",
       "uri": {
         "yt": "RDCLAK5uy_kL-nWMqnRoPuUCh9toq5gatFti1kFokH0",
         "sp": "37i9dQZF1DWVCKO3xAlT1Q"
@@ -22,9 +21,276 @@
       ],
       "title": "EUROVISION 2025 | NATIONAL FINALS",
       "author": "myeurovisionscoreboard",
-      "desc": "All songs of 2025 national finals",
       "uri": {
         "sp": "4pMktspziiyaJlfFF68Bje"
+      }
+    },
+    {
+      "id": "46c81905-e952-4009-a87d-947239c9adb6",
+      "tags": [
+        "2025",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen 2025",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX4G61FozXAf5"
+      }
+    },
+    {
+      "id": "41dda7b7-a93c-4030-b4f4-0d5ec3d4cf11",
+      "tags": [
+        "mix",
+        "official"
+      ],
+      "title": "Eurovision Winners",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX495GMOgfqUO"
+      }
+    },
+    {
+      "id": "62fd613d-6d67-4cda-883a-b22fd9d39f73",
+      "tags": [
+        "mix",
+        "official"
+      ],
+      "title": "Best of Eurovision 20s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DWZ4YXAortWyq"
+      }
+    },
+    {
+      "id": "61ddc34c-c85b-4865-bd0f-23c37e380821",
+      "tags": [
+        "mix",
+        "official"
+      ],
+      "title": "Best of Eurovision 10s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX5e0jJMgZcDu"
+      }
+    },
+    {
+      "id": "320b960a-0eb3-4e3c-b636-8d963bb3b0ae",
+      "tags": [
+        "mix",
+        "official"
+      ],
+      "title": "Best of Eurovision 00s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DXcWtcsOq1NSk"
+      }
+    },
+    {
+      "id": "fc295876-1c61-49cb-b38b-8f7366b6f70c",
+      "tags": [
+        "mix",
+        "official"
+      ],
+      "title": "Eurovision Party",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX6BCd5Q12fpZ"
+      }
+    },
+    {
+      "id": "b7f61073-c0d8-4e6c-a2b3-7999ef78fe9b",
+      "tags": [
+        "mix",
+        "official"
+      ],
+      "title": "Eurovision Ballads",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX9cQe60jpo75"
+      }
+    },
+    {
+      "id": "10bd8ee9-3cca-4b68-8187-52e764dfc791",
+      "tags": [
+        "2025",
+        "nf",
+        "umk",
+        "official"
+      ],
+      "title": "UMK 2025",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "61LNFXZM0qeGVAljxkHUbA"
+      }
+    },
+    {
+      "id": "6b5e0dea-55bc-47d1-aa28-973067e5b647",
+      "tags": [
+        "2024",
+        "nf",
+        "umk",
+        "official"
+      ],
+      "title": "UMK 2024",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "5ERrtOg0sJ6e21YB3clwC4"
+      }
+    },
+    {
+      "id": "d2ad2f69-a049-4693-b288-f9ebf8be1fc7",
+      "tags": [
+        "2023",
+        "nf",
+        "umk",
+        "official"
+      ],
+      "title": "UMK 2023",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "7GZoyHMyu2F2BHwLjfSMRL"
+      }
+    },
+    {
+      "id": "983e4ebe-451d-41ee-8531-cb5eed8ebf5e",
+      "tags": [
+        "mix",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen entries 2010s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX7t6AcAtbnAn"
+      }
+    },
+    {
+      "id": "51ae4dec-a1c9-4943-a80e-fd72dca09afb",
+      "tags": [
+        "mix",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen entries 2000s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DWX7I5A2Kgsph"
+      }
+    },
+    {
+      "id": "18c1d55f-8afd-47f7-92af-771e9f44f076",
+      "tags": [
+        "mix",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen entries 1990s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DWSljt2VIx6Ht"
+      }
+    },
+    {
+      "id": "9ad32bde-0115-41c3-9185-3a0ca3e10435",
+      "tags": [
+        "mix",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen entries 1980s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX0OtOjLceNc3"
+      }
+    },
+    {
+      "id": "8d105af7-5fe9-45b8-a451-13fcf725b515",
+      "tags": [
+        "mix",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen entries 1970s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX07IY7Nx0ijY"
+      }
+    },
+    {
+      "id": "07f4a69b-f6d1-4187-87eb-1656f50ede2c",
+      "tags": [
+        "mix",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen entries 1950s/1960s",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX6eWZTwIoHWT"
+      }
+    },
+    {
+      "id": "749c083d-ca9a-4df0-9af3-58f3da70d785",
+      "tags": [
+        "mix",
+        "nf",
+        "melfest",
+        "official"
+      ],
+      "title": "Melodifestivalen winners",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX5ksuQEF0c0h"
+      }
+    },
+    {
+      "id": "7c656eca-6a4e-41b5-91c7-deb35475b850",
+      "tags": [
+        "2025",
+        "nf",
+        "nmgp",
+        "official"
+      ],
+      "title": "Norway MGP 2025",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX4pmAdtsWlLY"
+      }
+    },
+    {
+      "id": "4fed120e-aebb-4e5c-86c4-1c51c70c7f1f",
+      "tags": [
+        "2025",
+        "nf",
+        "sanremo",
+        "official"
+      ],
+      "title": "Sanremo 2025",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DWVQfeA9N7Q0g"
+      }
+    },
+    {
+      "id": "bdd5772a-d1c7-47a4-98ca-f30515f53220",
+      "tags": [
+        "mix",
+        "nf",
+        "sanremo",
+        "official"
+      ],
+      "title": "Sanremo Winners",
+      "author": "Official playlist",
+      "uri": {
+        "sp": "37i9dQZF1DX4suJDjPFhDb"
       }
     }
   ]

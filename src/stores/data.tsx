@@ -12,3 +12,9 @@ const fetchTags = async () => {
     return response.default;
 }
 export const [tags] = createResource(fetchTags);
+
+const fetchNfFlags = async () => {
+    const response = await import("data/nf-flags.json") as { default: Record<string, string> };
+    return response.default;
+}
+export const [nfFlags] = createResource(fetchNfFlags);

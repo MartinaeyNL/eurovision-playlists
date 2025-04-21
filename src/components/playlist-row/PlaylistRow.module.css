@@ -7,6 +7,10 @@
     gap: var(--escp-container-gap);
 }
 
+.Container > div {
+    padding: 4px 0;
+}
+
 vaadin-card {
     user-select: text;
 }

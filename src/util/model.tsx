@@ -6,7 +6,6 @@ export interface PlaylistMetadata {
     tags: string[];
     title: string;
     author: string;
-    desc: string;
     img?: string;
     uri: PlaylistUri;
 }

@@ -74,16 +74,13 @@ const App: Component = () => {
 
     return (
         <div class={`${styles.App} ${getAppearanceStyles(appearance())}`}>
-            <div class={styles.Content}>
-                <Router root={Layout}>
-                    <Route path="/" component={Home} />
-                    <Route path="/playlist/:id" component={Playlist}/>
-                    <Route path="/random-artist" component={RandomArtist} />
-                    <Route path="/about" component={About}/>
-                    <Route path="*404" component={Home} />
-                </Router>
-            </div>
-            <span>{t("goodbye", {name: 'Martin'})}</span>
+            <Router root={Layout}>
+                <Route path="/" component={Home} />
+                <Route path="/playlist/:id" component={Playlist}/>
+                <Route path="/random-artist" component={RandomArtist} />
+                <Route path="/about" component={About}/>
+                <Route path="*404" component={Home} />
+            </Router>
         </div>
     );
 };
