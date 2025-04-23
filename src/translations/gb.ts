@@ -4,9 +4,8 @@ export const dict = {
     goodbye: ({ name }: { name: string }) => `goodbye ${name}`,
     mainMenu: {
         home: "Home",
-        randomPlaylist: "Random playlist",
-        randomArtist: "Random artist",
-        contribute: "Contribute",
+        playlists: "Playlists",
+        artists: "Artists",
         about: "About us",
     },
     searchBanner: {

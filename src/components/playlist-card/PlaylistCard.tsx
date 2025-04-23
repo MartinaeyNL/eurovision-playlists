@@ -13,6 +13,7 @@ import {nfFlags} from "../../stores/data";
 interface PlaylistCardProps {
     playlist: PlaylistMetadata;
     badges?: Record<string, string>
+    mediaOnly?: boolean;
 }
 
 const fetchPlaylistImg = async (id?: string) => {
@@ -43,34 +44,36 @@ const PlaylistCard: Component<PlaylistCardProps> = (props: PlaylistCardProps) =>
         <div>
             <style>${badge.cssText}</style>
             <A href={`/playlist/${props.playlist.id}`}>
-                <vaadin-card theme="cover-media">
+                <vaadin-card theme="cover-media" class={props.mediaOnly ? styles.CardMediaOnly : undefined}>
                     <img slot="media" src={props.playlist.img || playlistImg()?.[0].url || 'src/assets/abstract_background_light.svg'} alt=""/>
-                    <div slot="title">
-                        <span>{props.playlist.title}</span>
-                        <Show when={flagIcon()}>
-                            <Icon class={styles.MenuIcon} inline icon={flagIcon() as string} />
-                        </Show>
-                    </div>
-                    <span slot="subtitle">{props.playlist.author}</span>
-                    <div class={styles.FooterRow}>
-                        <div class={styles.BadgeRow}>
-                            <For each={props.playlist.tags.filter((_, index) => index < 2)}>
-                                {(item, index) => (<Badge label={t(`tags.${item}` as any) || item} color={props.badges?.[item.toLowerCase()] || 'green'}/>)}
-                            </For>
-                        </div>
-                        <div class={styles.IconRow}>
-                            <Show when={props.playlist.uri.sp}>
-                                <A href={`https://open.spotify.com/playlist/${props.playlist.uri.sp}`}>
-                                    <Icon icon="mdi:spotify"/>
-                                </A>
-                            </Show>
-                            <Show when={props.playlist.uri.yt}>
-                                <A href={`https://music.youtube.com/playlist?list=${props.playlist.uri.yt}`}>
-                                    <Icon icon="material-symbols:play-circle-outline"/>
-                                </A>
+                    <Show when={!props.mediaOnly}>
+                        <div slot="title">
+                            <span>{props.playlist.title}</span>
+                            <Show when={flagIcon()}>
+                                <Icon class={styles.MenuIcon} inline icon={flagIcon() as string}/>
                             </Show>
                         </div>
-                    </div>
+                        <span slot="subtitle">{props.playlist.author}</span>
+                        <div class={styles.FooterRow}>
+                            <div class={styles.BadgeRow}>
+                                <For each={props.playlist.tags.filter((_, index) => index < 2)}>
+                                    {(item, index) => (<Badge label={t(`tags.${item}` as any) || item} color={props.badges?.[item.toLowerCase()] || 'green'}/>)}
+                                </For>
+                            </div>
+                            <div class={styles.IconRow}>
+                                <Show when={props.playlist.uri.sp}>
+                                    <A href={`https://open.spotify.com/playlist/${props.playlist.uri.sp}`}>
+                                        <Icon icon="mdi:spotify"/>
+                                    </A>
+                                </Show>
+                                <Show when={props.playlist.uri.yt}>
+                                    <A href={`https://music.youtube.com/playlist?list=${props.playlist.uri.yt}`}>
+                                        <Icon icon="material-symbols:play-circle-outline"/>
+                                    </A>
+                                </Show>
+                            </div>
+                        </div>
+                    </Show>
                 </vaadin-card>
             </A>
         </div>

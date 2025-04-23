@@ -1,0 +1,28 @@
+.Wrapper {
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.Scene {
+    width: 200px;
+    height: 200px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.Scene .KeenSlider {
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    position: absolute;
+    transform: translateZ(-288px);
+    transform-style: preserve-3d;
+}
+
+.Slide {
+    position: absolute;
+    width: 200px;
+    left: 10px;
+    height: 200px;
+}

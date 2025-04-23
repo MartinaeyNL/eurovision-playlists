@@ -15,11 +15,6 @@
   overflow: auto;
 }
 
-header {
-  box-shadow: 2px 2px 4px var(--escp-color-secondary-700);
-  z-index: 10;
-}
-
 .AppLight {
   /* Primary colors for Light mode */
   --escp-color-primary-900: var(--teal-10);
@@ -31,6 +26,15 @@ header {
   --escp-color-primary-200: var(--teal-2);
   --escp-color-primary-100: var(--teal-1);
   --escp-color-primary-0: var(--teal-0);
+  /*--escp-color-primary-900: var(--orange-10);
+  --escp-color-primary-800: var(--orange-9);
+  --escp-color-primary-700: var(--orange-8);
+  --escp-color-primary-600: var(--orange-7);
+  --escp-color-primary-500: var(--orange-6);
+  --escp-color-primary-400: var(--orange-4);
+  --escp-color-primary-200: var(--orange-2);
+  --escp-color-primary-100: var(--orange-1);
+  --escp-color-primary-0: var(--orange-0);*/
 
   /* Secondary colors for Light mode */
   --escp-color-secondary: var(--gray-10);

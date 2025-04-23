@@ -20,6 +20,10 @@
     height: var(--escp-font-size-lg);
 }
 
+.CardMediaOnly {
+    padding-bottom: 0;
+}
+
 vaadin-card {
     width: 100%;
     height: 100%;
@@ -27,6 +31,10 @@ vaadin-card {
     transition: box-shadow 0.1s ease-in-out;
     overflow: hidden;
     color: var(--escp-color-secondary);
+}
+
+.CardMediaOnly > img {
+    transform-origin: center;
 }
 
 vaadin-card > img {

@@ -26,40 +26,32 @@ const Header: Component = () => {
                 <Icon class={styles.PrefixIcon} inline icon="material-symbols:bar-chart-rounded" />
                 <h1>Eurovision-playlists.com</h1>
             </div>
-            <div class={styles.Suffix}>
-                <vaadin-tabsheet class={styles.MenuSheet}>
+            <div class={styles.Center}>
+                <vaadin-tabsheet className={styles.MenuSheet}>
                     <vaadin-tabs slot="tabs" selected={selectedIndex} on:selected-changed={(ev: CustomEvent) => onMenuSelect(ev)}>
                         <vaadin-tab>
-                            <Icon inline icon="material-symbols:home" />
+                            <Icon inline icon="material-symbols:home"/>
                             {t("mainMenu.home")}
                         </vaadin-tab>
                         <vaadin-tab>
-                            <Icon inline icon="material-symbols:shuffle" />
-                            {t("mainMenu.randomPlaylist")}
+                            <Icon inline icon="material-symbols:queue-music-rounded"/>
+                            {t("mainMenu.playlists")}
                         </vaadin-tab>
                         <vaadin-tab>
-                            <Icon inline icon="material-symbols:artist" />
-                            {t("mainMenu.randomArtist")}
-                        </vaadin-tab>
-                        <vaadin-tab>
-                            <Icon inline icon="material-symbols:library-add" />
-                            {t("mainMenu.contribute")}
-                        </vaadin-tab>
-                        <vaadin-tab>
-                            <Icon inline icon="material-symbols:info-outline" />
-                            {t("mainMenu.about")}
+                            <Icon inline icon="material-symbols:artist"/>
+                            {t("mainMenu.artists")}
                         </vaadin-tab>
                     </vaadin-tabs>
-                    <div slot="suffix" class={styles.SuffixContainer}>
-                        <vaadin-select items={getSelectItems()} value={locale()} no-vertical-overlap on:value-changed={onLocaleSelect}>
-                            <Icon slot="prefix" class={styles.MenuIcon} inline icon={`flag:${locale()}-4x3`} />
-                        </vaadin-select>
-                        <vaadin-button theme="secondary" onClick={_onAppearanceChange}>
-                            <Icon class={styles.MenuIcon} inline icon={appearance() === AppearanceMode.LIGHT ? 'material-symbols:light-mode' : 'material-symbols:dark-mode'} />
-                            <span>{appearance() === AppearanceMode.LIGHT ? 'Light' : 'Dark'}</span>
-                        </vaadin-button>
-                    </div>
                 </vaadin-tabsheet>
+            </div>
+            <div class={styles.Suffix}>
+                <vaadin-select items={getSelectItems()} value={locale()} no-vertical-overlap on:value-changed={onLocaleSelect}>
+                    <Icon slot="prefix" class={styles.MenuIcon} inline icon={`flag:${locale()}-4x3`}/>
+                </vaadin-select>
+                <vaadin-button theme="secondary" onClick={_onAppearanceChange}>
+                    <Icon class={styles.MenuIcon} inline icon={appearance() === AppearanceMode.LIGHT ? 'material-symbols:light-mode' : 'material-symbols:dark-mode'}/>
+                    <span>{appearance() === AppearanceMode.LIGHT ? 'Light' : 'Dark'}</span>
+                </vaadin-button>
             </div>
         </header>
     )
@@ -67,9 +59,12 @@ const Header: Component = () => {
 
 function _getPage(index: number): string {
     switch (index) {
-        case 1: return "/random-artist";
-        case 2: return "/about";
-        default: return "/";
+        case 1:
+            return "/random-artist";
+        case 2:
+            return "/about";
+        default:
+            return "/";
     }
 }
 
